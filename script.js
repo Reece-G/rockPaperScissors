@@ -10,5 +10,8 @@ function getComputerChoice() {
     console.log(computerChoice, num);
 }
 
-// calls the function 
-getComputerChoice();
+// get users selection of rock, paper or scissors
+function getPlayerChoice() {
+    // prompt for user input and assign into userInp variable 
+    let userInp = prompt("Enter Rock, Paper or Scissors: ").toLowerCase();
+}
