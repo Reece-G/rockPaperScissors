@@ -4,8 +4,8 @@ function getComputerChoice() {
     // declare computer choice variable
     let computerChoice;
     // Conditional ternary statement to pick rock, paper or scissors
-    (num == 0) ? computerChoice = "Rock" :
-        (num ==1) ? computerChoice = "Paper" :
+    (num == 0) ? computerChoice = "Rock" : // if num = 0 rock is assigned and so on...
+        (num == 1) ? computerChoice = "Paper" :
             computerChoice = "Scissors";
     console.log(computerChoice, num);
 }
