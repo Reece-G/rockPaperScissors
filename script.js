@@ -15,10 +15,9 @@ function getPlayerChoice() {
     return userNum;
 }
 
-let computer = getComputerChoice();
-let player = getPlayerChoice();
-
 function playRound(computer, player) {
+    let computer = getComputerChoice();
+    let player = getPlayerChoice();
     // compare both args for a tie
     if (computer == player) {
         console.log(`It's a tie!`)}
@@ -26,39 +25,38 @@ function playRound(computer, player) {
         else if(computer == 3) {
             if (player == 2) {
                 // Player loses with scissors (2)
-                return console.log("You lose! Rock beats Scissors!");
+                return "You lose! Rock beats Scissors!";
             }
             else {
                 // Player wins with paper (1)
-                return console.log("You win! Paper beats Rock!")
+                return "You win! Paper beats Rock!"
             }
         }
         // if computer picks scissors
         else if (computer == 2) {
             if (player == 3) {
                 // Player wins with rock (3)
-                return console.log("You win! Rock beats Scissors!");
+                return "You win! Rock beats Scissors!";
             }
             else {
                 // Player loses with paper (1)
-                return console.log("You lose! Scissors beats Paper!");
+                return "You lose! Scissors beats Paper!";
             }
         }
         // if computer picks paper
         else {
             if (player == 3) {
                 // Player loses with rock
-                return console.log("You lose! Paper beats Rock");
+                return "You lose! Paper beats Rock";
             }
             else {
                 // Player wins with scissors 
-                return console.log("You win! Scissors beats paper!")
+                return "You win! Scissors beats paper!"
             }
         }
         // 
 }
 
-playRound(computer, player);
 // computer >> - player
 // rock (3) >> scissors (-2) - left wins 1 
 // scissors (2) >> paper (-1) -  left wins 1
