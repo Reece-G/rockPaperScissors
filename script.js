@@ -1,17 +1,68 @@
 // determines the choice for the computer by using a random number generator
 function getComputerChoice() {
-    let num = Math.floor(Math.random() * 3);
-    // declare computer choice variable
-    let computerChoice;
-    // Conditional ternary statement to pick rock, paper or scissors
-    (num == 0) ? computerChoice = "Rock" : // if num = 0 rock is assigned and so on...
-        (num == 1) ? computerChoice = "Paper" :
-            computerChoice = "Scissors";
-    console.log(computerChoice, num);
+    let computerChoice = Math.ceil(Math.random() * 3);
+    return computerChoice;
 }
 
 // get users selection of rock, paper or scissors
 function getPlayerChoice() {
     // prompt for user input and assign into userInp variable 
     let userInp = prompt("Enter Rock, Paper or Scissors: ").toLowerCase();
+    // set numerical value for each selection
+    (userInp == "rock") ? userNum = 3 :
+        (userInp == "scissors") ? userNum = 2 :
+            userNum = 1 ;
+    return userNum;
 }
+
+let computer = getComputerChoice();
+let player = getPlayerChoice();
+
+function playRound(computer, player) {
+    // compare both args for a tie
+    if (computer == player) {
+        console.log(`It's a tie!`)}
+        // if computer picks rock (3)
+        else if(computer == 3) {
+            if (player == 2) {
+                // Player loses with scissors (2)
+                return console.log("You lose! Rock beats Scissors!");
+            }
+            else {
+                // Player wins with paper (1)
+                return console.log("You win! Paper beats Rock!")
+            }
+        }
+        // if computer picks scissors
+        else if (computer == 2) {
+            if (player == 3) {
+                // Player wins with rock (3)
+                return console.log("You win! Rock beats Scissors!");
+            }
+            else {
+                // Player loses with paper (1)
+                return console.log("You lose! Scissors beats Paper!");
+            }
+        }
+        // if computer picks paper
+        else {
+            if (player == 3) {
+                // Player loses with rock
+                return console.log("You lose! Paper beats Rock");
+            }
+            else {
+                // Player wins with scissors 
+                return console.log("You win! Scissors beats paper!")
+            }
+        }
+        // 
+}
+
+playRound(computer, player);
+// computer >> - player
+// rock (3) >> scissors (-2) - left wins 1 
+// scissors (2) >> paper (-1) -  left wins 1
+// paper (1)>> rock (-3) - right wins -2
+
+// player >> - computer 
+//  rock >> scissors left wins 1 
