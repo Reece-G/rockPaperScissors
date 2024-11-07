@@ -79,7 +79,7 @@ function playRound() {
 function playGame() {
     let playerScore = 0;
     let computerScore = 0;
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 1; i++) {
         [tie, result, resultTxt] = playRound()
         console.log(resultTxt);
         if (tie) {
@@ -107,4 +107,14 @@ function playGame() {
     console.log("with a score of ", playerScore, computerScore);
 }
 
-playGame();
+// EVENTS
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        console.log(button.id)
+
+        playRound(button.id)
+    })
+})
+
