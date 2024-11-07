@@ -4,23 +4,12 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-// get users selection of rock, paper or scissors
-function getPlayerChoice() {
-    // prompt for user input and assign into userInp variable 
-    let userInp = prompt("Enter Rock, Paper or Scissors: ").toLowerCase();
-    // set numerical value for each selection
-    (userInp == "rock") ? userNum = 3 :
-        (userInp == "scissors") ? userNum = 2 :
-            userNum = 1 ;
-    return userNum;
-}
-
-function playRound() {
+function playRound(player_choice) {
     let tie = false;
     let result;
     let resultTxt;
     let computer = getComputerChoice();
-    let player = getPlayerChoice();
+    let player = player_choice;
     // compare both args for a tie
     if (computer == player) {
             resultTxt = "It's a tie!",
@@ -76,11 +65,11 @@ function playRound() {
 // player >> - computer 
 //  rock >> scissors left wins 1 
 
-function playGame() {
+function playGame(player_choice) {
     let playerScore = 0;
     let computerScore = 0;
     for (let i = 0; i < 1; i++) {
-        [tie, result, resultTxt] = playRound()
+        [tie, result, resultTxt] = playRound(player_choice)
         console.log(resultTxt);
         if (tie) {
             continue
@@ -114,7 +103,7 @@ buttons.forEach((button) => {
     button.addEventListener("click", () => {
         console.log(button.id)
 
-        playRound(button.id)
+        playGame(button.id)
     })
 })
 
